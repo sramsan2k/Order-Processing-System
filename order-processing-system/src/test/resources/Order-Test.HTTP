@@ -1,0 +1,52 @@
+### Register a user
+POST http://localhost:8080/api/users
+Content-Type: application/json
+
+{
+  "userId": "user11",
+  "name": "Sriram",
+  "email": "sriram@example.com"
+}
+
+### Add inventory item
+POST http://localhost:8080/api/inventory
+Content-Type: application/json
+
+{
+  "itemId": "item1",
+  "itemName": "Laptop",
+  "availableQty": 10
+}
+
+### Place order
+POST http://localhost:8080/api/orders
+Content-Type: application/json
+
+{
+  "order": {
+    "orderId": "order-1",
+    "userId": "user11",
+    "items": [
+      {
+        "itemId": "item1",
+        "quantity": 3
+      }
+    ],
+    "status": "PENDING"
+  }
+}
+
+
+
+
+
+### Get order
+GET http://localhost:8080/api/orders/user/user11
+
+
+### Cancel order
+POST http://localhost:8080/api/orders/cancel/635309b8-4faf-498f-be9d-edff59388bef
+Content-Type: application/json
+
+{}
+
