@@ -79,7 +79,7 @@ Replace `{orderId}` with the actual order ID from step 3 response.
 #### 5. Cancel Order
 
 ```http
-DELETE http://localhost:8080/api/orders/{orderId}
+POST http://localhost:8080/api/orders/cancel/{orderId}
 ```
 
 Only works if the order is in `PENDING` state.
